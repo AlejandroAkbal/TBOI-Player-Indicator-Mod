@@ -3,10 +3,10 @@
   <name>Player Indicator</name>
   <directory>player-indicator</directory>
   <description>
-    Displays a player indicator below the ingame player.
+Displays a player indicator below the ingame player.
 
-    This mod is open source.
-    https://github.com/AlejandroAkbal/TBOI-Player-Indicator-Mod
+This mod is open source.
+https://github.com/AlejandroAkbal/TBOI-Player-Indicator-Mod
 </description>
   <version>1.0.2</version>
   <visibility>Public</visibility>
