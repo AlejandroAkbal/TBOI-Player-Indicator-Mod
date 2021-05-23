@@ -1,6 +1,6 @@
 {
   "name": "player-indicator",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A mod for The Binding of Isaac: Repentance",
   "keywords": [
     "isaac",
@@ -15,6 +15,6 @@
     "publish": "isaacscript publish"
   },
   "dependencies": {
-    "isaacscript": "^1.0.90"
+    "isaacscript": "^1.0.91"
   }
 }
