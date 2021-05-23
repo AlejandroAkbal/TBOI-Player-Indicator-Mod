@@ -4,5 +4,8 @@
   <directory>player-indicator</directory>
   <description>This mod displays a player indicator below the ingame player.</description>
   <version>1.0.1</version>
-  <visibility />
+  <visibility>Public</visibility>
+  <tag id="Lua" />
+  <tag id="Tweaks" />
+  <tag id="Graphics" />
 </metadata>
