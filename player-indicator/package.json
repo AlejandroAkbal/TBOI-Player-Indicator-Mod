@@ -10,6 +10,9 @@
     "repentance"
   ],
   "license": "GPL-3.0",
+  "scripts": {
+    "dev": "isaacscript"
+  },
   "dependencies": {
     "isaacscript": "^1.0.90"
   }
