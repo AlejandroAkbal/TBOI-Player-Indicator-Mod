@@ -14,7 +14,28 @@ enum Config {
 
 // Define callback functions
 function postRender() {
+  if (!shouldRender()) {
+    return;
+  }
+
   checkForPlayers();
+}
+
+function shouldRender() {
+  const CURRENT_ROOM = GAME.GetRoom();
+
+  if (GAME.IsPaused()) {
+    return false;
+  }
+
+  // Don't render on Animations
+  if (CURRENT_ROOM.GetFrameCount() < 1 && !CURRENT_ROOM.IsClear()) {
+    return false;
+  }
+
+  // Isaac.ConsoleOutput("It can be rendered");
+
+  return true;
 }
 
 function checkForPlayers() {
