@@ -50,19 +50,22 @@ function checkForPlayers() {
   }
 }
 
-function drawStringBelowPlayer(string: string, player: EntityPlayer) {
+function drawStringBelowPlayer(stringToDraw: string, player: EntityPlayer) {
   const PLAYER_POSITION = Isaac.WorldToScreen(player.Position);
 
   const GAME_FONT = Font();
   GAME_FONT.Load(Config.Font);
 
+  const PLAYER_COLOR =
+    PLAYER_COLOR_ARRAY[player.ControllerIndex] ?? PLAYER_COLOR_ARRAY[0];
+
   GAME_FONT.DrawStringScaledUTF8(
-    string,
+    stringToDraw,
     PLAYER_POSITION.X + Config.FONT_X_OFFSET,
     PLAYER_POSITION.Y + Config.FONT_Y_OFFSET,
     Config.FONT_SCALE,
     Config.FONT_SCALE,
-    KColor(255, 255, 255, 1),
+    PLAYER_COLOR,
     0,
     true,
   );
