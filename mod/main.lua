@@ -20,7 +20,7 @@ end
 ____modules = {
 ["constants"] = function() --[[ Generated with https://github.com/TypeScriptToLua/TypeScriptToLua ]]
 local ____exports = {}
-____exports.VERSION = "v1.0.0"
+____exports.VERSION = "v1.0.2"
 return ____exports
 end,
 ["main"] = function() --[[ Generated with https://github.com/TypeScriptToLua/TypeScriptToLua ]]
