@@ -9,7 +9,7 @@ Displays a player indicator below the ingame player.
 This mod is open source.
 https://github.com/AlejandroAkbal/TBOI-Player-Indicator-Mod
 </description>
-  <version>1.0.3</version>
+  <version>1.0.4</version>
   <visibility>Public</visibility>
   <tag id="Lua" />
   <tag id="Tweaks" />
