@@ -1,16 +1,9 @@
+import { Config, PLAYER_COLOR_ARRAY } from "./constants";
+
 const GAME = Game();
 
 // Register the mod
 const PLAYER_INDICATOR_MOD = RegisterMod("Player Indicator", 1);
-
-enum Config {
-  DisableWithOnlyOnePlayer = 0,
-
-  Font = "font/upheaval.fnt",
-  FONT_X_OFFSET = -11,
-  FONT_Y_OFFSET = 5,
-  FONT_SCALE = 1,
-}
 
 // Define callback functions
 function postRender() {
@@ -32,8 +25,6 @@ function shouldRender() {
   if (CURRENT_ROOM.GetFrameCount() < 1 && !CURRENT_ROOM.IsClear()) {
     return false;
   }
-
-  // Isaac.ConsoleOutput("It can be rendered");
 
   return true;
 }
