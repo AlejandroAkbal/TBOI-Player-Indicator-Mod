@@ -44,7 +44,8 @@ function checkForPlayers() {
       return;
     }
 
-    const PLAYER_NUMBER_STRING = `P${PLAYER.ControllerIndex}`;
+    const PLAYER_NUMBER = index + 1;
+    const PLAYER_NUMBER_STRING = `P${PLAYER_NUMBER}`;
 
     drawStringBelowPlayer(PLAYER_NUMBER_STRING, PLAYER);
   }
