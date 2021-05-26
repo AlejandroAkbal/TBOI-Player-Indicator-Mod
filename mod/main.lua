@@ -24,23 +24,18 @@ ____exports.VERSION = "v1.0.2"
 ____exports.Config = Config or ({})
 ____exports.Config.DisableWithOnlyOnePlayer = 0
 ____exports.Config[____exports.Config.DisableWithOnlyOnePlayer] = "DisableWithOnlyOnePlayer"
-____exports.Config.Font = "font/upheaval.fnt"
-____exports.Config.FONT_X_OFFSET = -11
+____exports.Config.Font = "font/pftempestasevencondensed.fnt"
+____exports.Config.FONT_X_OFFSET = 0
 ____exports.Config[____exports.Config.FONT_X_OFFSET] = "FONT_X_OFFSET"
 ____exports.Config.FONT_Y_OFFSET = 5
 ____exports.Config[____exports.Config.FONT_Y_OFFSET] = "FONT_Y_OFFSET"
-____exports.Config.FONT_SCALE = 1
+____exports.Config.FONT_SCALE = 1.5
 ____exports.Config[____exports.Config.FONT_SCALE] = "FONT_SCALE"
 ____exports.PLAYER_COLOR_ARRAY = {
     KColor(255, 255, 255, 1),
     KColor(0, 255, 255, 1),
     KColor(0, 255, 0, 1),
-    KColor(255, 0, 255, 1),
-    KColor(255, 255, 0, 1),
-    KColor(255, 0, 0, 1),
-    KColor(0, 255, 0, 1),
-    KColor(0, 0, 255, 1),
-    KColor(0, 0, 0, 1)
+    KColor(255, 0, 255, 1)
 }
 return ____exports
 end,
@@ -72,7 +67,8 @@ function checkForPlayers(self)
             if not PLAYER then
                 return
             end
-            local PLAYER_NUMBER_STRING = "P" .. tostring(PLAYER.ControllerIndex)
+            local PLAYER_NUMBER = index + 1
+            local PLAYER_NUMBER_STRING = "P" .. tostring(PLAYER_NUMBER)
             drawStringBelowPlayer(nil, PLAYER_NUMBER_STRING, PLAYER)
             index = index + 1
         end
@@ -83,7 +79,7 @@ function drawStringBelowPlayer(self, stringToDraw, player)
     local GAME_FONT = Font()
     GAME_FONT:Load(Config.Font)
     local PLAYER_COLOR = PLAYER_COLOR_ARRAY[player.ControllerIndex + 1] or PLAYER_COLOR_ARRAY[1]
-    GAME_FONT:DrawStringScaledUTF8(stringToDraw, PLAYER_POSITION.X + Config.FONT_X_OFFSET, PLAYER_POSITION.Y + Config.FONT_Y_OFFSET, Config.FONT_SCALE, Config.FONT_SCALE, PLAYER_COLOR, 0, true)
+    GAME_FONT:DrawStringScaledUTF8(stringToDraw, PLAYER_POSITION.X + Config.FONT_X_OFFSET, PLAYER_POSITION.Y + Config.FONT_Y_OFFSET, Config.FONT_SCALE, Config.FONT_SCALE, PLAYER_COLOR, 1, true)
 end
 GAME = Game()
 local PLAYER_INDICATOR_MOD = RegisterMod("Player Indicator", 1)
