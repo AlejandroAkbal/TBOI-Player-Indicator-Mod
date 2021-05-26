@@ -66,7 +66,7 @@ function drawStringBelowPlayer(stringToDraw: string, player: EntityPlayer) {
     Config.FONT_SCALE,
     Config.FONT_SCALE,
     PLAYER_COLOR,
-    0,
+    1,
     true,
   );
 }

@@ -2,10 +2,10 @@ export const VERSION = "v1.0.2";
 
 export enum Config {
   DisableWithOnlyOnePlayer = 0,
-  Font = "font/upheaval.fnt",
-  FONT_X_OFFSET = -11,
+  Font = "font/pftempestasevencondensed.fnt",
+  FONT_X_OFFSET = 0,
   FONT_Y_OFFSET = 5,
-  FONT_SCALE = 1,
+  FONT_SCALE = 1.5,
 }
 
 export const PLAYER_COLOR_ARRAY = [
