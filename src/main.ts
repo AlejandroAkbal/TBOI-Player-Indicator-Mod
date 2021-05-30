@@ -37,28 +37,31 @@ function checkForPlayers() {
     return;
   }
 
-  for (let index = 0; index < NUM_PLAYERS; index++) {
-    const PLAYER = Isaac.GetPlayer(index);
+  for (let playerIndex = 0; playerIndex < NUM_PLAYERS; playerIndex++) {
+    const PLAYER = Isaac.GetPlayer(playerIndex);
 
     if (!PLAYER) {
       return;
     }
 
-    const PLAYER_NUMBER = index + 1;
+    const PLAYER_NUMBER = playerIndex + 1;
     const PLAYER_NUMBER_STRING = `P${PLAYER_NUMBER}`;
 
-    drawStringBelowPlayer(PLAYER_NUMBER_STRING, PLAYER);
+    drawStringBelowPlayer(PLAYER_NUMBER_STRING, PLAYER, playerIndex);
   }
 }
 
-function drawStringBelowPlayer(stringToDraw: string, player: EntityPlayer) {
+function drawStringBelowPlayer(
+  stringToDraw: string,
+  player: EntityPlayer,
+  playerIndex: number,
+) {
   const PLAYER_POSITION = Isaac.WorldToScreen(player.Position);
+
+  const PLAYER_COLOR = PLAYER_COLOR_ARRAY[playerIndex] ?? PLAYER_COLOR_ARRAY[0];
 
   const GAME_FONT = Font();
   GAME_FONT.Load(Config.Font);
-
-  const PLAYER_COLOR =
-    PLAYER_COLOR_ARRAY[player.ControllerIndex] ?? PLAYER_COLOR_ARRAY[0];
 
   GAME_FONT.DrawStringScaledUTF8(
     stringToDraw,
