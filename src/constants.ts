@@ -1,4 +1,4 @@
-export const VERSION = "v1.0.2";
+export const VERSION = "1.0.7";
 
 export enum Config {
   DisableWithOnlyOnePlayer = 0,

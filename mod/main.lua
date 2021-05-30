@@ -20,7 +20,7 @@ end
 ____modules = {
 ["constants"] = function() --[[ Generated with https://github.com/TypeScriptToLua/TypeScriptToLua ]]
 local ____exports = {}
-____exports.VERSION = "v1.0.2"
+____exports.VERSION = "1.0.7"
 ____exports.Config = Config or ({})
 ____exports.Config.DisableWithOnlyOnePlayer = 0
 ____exports.Config[____exports.Config.DisableWithOnlyOnePlayer] = "DisableWithOnlyOnePlayer"
@@ -32,10 +32,10 @@ ____exports.Config[____exports.Config.FONT_Y_OFFSET] = "FONT_Y_OFFSET"
 ____exports.Config.FONT_SCALE = 1.5
 ____exports.Config[____exports.Config.FONT_SCALE] = "FONT_SCALE"
 ____exports.PLAYER_COLOR_ARRAY = {
-    KColor(255, 255, 255, 1),
     KColor(0, 255, 255, 1),
     KColor(0, 255, 0, 1),
-    KColor(255, 0, 255, 1)
+    KColor(255, 0, 255, 1),
+    KColor(255, 255, 0, 1)
 }
 return ____exports
 end,
@@ -61,24 +61,24 @@ function checkForPlayers(self)
         return
     end
     do
-        local index = 0
-        while index < NUM_PLAYERS do
-            local PLAYER = Isaac.GetPlayer(index)
+        local playerIndex = 0
+        while playerIndex < NUM_PLAYERS do
+            local PLAYER = Isaac.GetPlayer(playerIndex)
             if not PLAYER then
                 return
             end
-            local PLAYER_NUMBER = index + 1
+            local PLAYER_NUMBER = playerIndex + 1
             local PLAYER_NUMBER_STRING = "P" .. tostring(PLAYER_NUMBER)
-            drawStringBelowPlayer(nil, PLAYER_NUMBER_STRING, PLAYER)
-            index = index + 1
+            drawStringBelowPlayer(nil, PLAYER_NUMBER_STRING, PLAYER, playerIndex)
+            playerIndex = playerIndex + 1
         end
     end
 end
-function drawStringBelowPlayer(self, stringToDraw, player)
+function drawStringBelowPlayer(self, stringToDraw, player, playerIndex)
     local PLAYER_POSITION = Isaac.WorldToScreen(player.Position)
+    local PLAYER_COLOR = PLAYER_COLOR_ARRAY[playerIndex + 1] or PLAYER_COLOR_ARRAY[1]
     local GAME_FONT = Font()
     GAME_FONT:Load(Config.Font)
-    local PLAYER_COLOR = PLAYER_COLOR_ARRAY[player.ControllerIndex + 1] or PLAYER_COLOR_ARRAY[1]
     GAME_FONT:DrawStringScaledUTF8(stringToDraw, PLAYER_POSITION.X + Config.FONT_X_OFFSET, PLAYER_POSITION.Y + Config.FONT_Y_OFFSET, Config.FONT_SCALE, Config.FONT_SCALE, PLAYER_COLOR, 1, true)
 end
 GAME = Game()
