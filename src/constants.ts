@@ -1,7 +1,6 @@
 export const VERSION = "1.0.7";
 
 export enum Config {
-  DisableWithOnlyOnePlayer = 0,
   Font = "font/pftempestasevencondensed.fnt",
   FONT_X_OFFSET = 0,
   FONT_Y_OFFSET = 5,

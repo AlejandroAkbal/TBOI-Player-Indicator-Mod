@@ -41,11 +41,6 @@ function shouldRender() {
 function checkForPlayers() {
   const NUM_PLAYERS = GAME.GetNumPlayers();
 
-  // Exit
-  if (Config.DisableWithOnlyOnePlayer === 1 && NUM_PLAYERS <= 1) {
-    return;
-  }
-
   for (let playerIndex = 0; playerIndex < NUM_PLAYERS; playerIndex++) {
     const PLAYER = Isaac.GetPlayer(playerIndex);
 
