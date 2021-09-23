@@ -5,7 +5,9 @@
   <directory>player-indicator</directory>
   <description>Displays a player indicator below the in-game player.
 
-This mod is open source.
+This is very useful for coop, as it allows you to track your player.
+
+This co-op mod is open source.
 https://github.com/AlejandroAkbal/TBOI-Player-Indicator-Mod
 </description>
   <version>1.0.7</version>
