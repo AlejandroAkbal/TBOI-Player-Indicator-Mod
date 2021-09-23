@@ -1,13 +1,4 @@
 {
-    "version": "0.1",
-    "language": "en",
-    "dictionaries": [
-        "en_US"
-    ],
-    "words": [
-        "dbaeumer",
-        "isaacscript",
-        "steamapps",
-        "tstl"
-    ]
+  "version": "0.2",
+  "words": ["dbaeumer", "isaacscript", "steamapps", "tstl"]
 }
