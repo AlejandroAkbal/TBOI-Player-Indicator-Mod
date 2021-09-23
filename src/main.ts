@@ -1,9 +1,18 @@
 import { Config, PLAYER_COLOR_ARRAY } from "./constants";
 
-const GAME = Game();
+export default function main(): void {
+  // Instantiate a new mod object, which grants the ability to add callback functions that
+  // correspond to in-game events
+  const MOD = RegisterMod("Player Indicator", 1);
 
-// Register the mod
-const PLAYER_INDICATOR_MOD = RegisterMod("Player Indicator", 1);
+  // Set a callback function that corresponds to when a new run is started
+  MOD.AddCallback(ModCallbacks.MC_POST_RENDER, postRender);
+
+  // Print an initialization message to the "log.txt" file
+  Isaac.DebugString("Player Indicator initialized.");
+}
+
+const GAME = Game();
 
 // Define callback functions
 function postRender() {
@@ -40,7 +49,7 @@ function checkForPlayers() {
   for (let playerIndex = 0; playerIndex < NUM_PLAYERS; playerIndex++) {
     const PLAYER = Isaac.GetPlayer(playerIndex);
 
-    if (!PLAYER) {
+    if (PLAYER === null) {
       return;
     }
 
@@ -74,9 +83,3 @@ function drawStringBelowPlayer(
     true,
   );
 }
-
-// Register callbacks
-PLAYER_INDICATOR_MOD.AddCallback(ModCallbacks.MC_POST_RENDER, postRender);
-
-// Print an initialization message to the "log.txt" file
-Isaac.DebugString("Player Indicator initialized.");
