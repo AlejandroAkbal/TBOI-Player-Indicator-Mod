@@ -44,7 +44,7 @@ function checkForPlayers() {
   for (let playerIndex = 0; playerIndex < NUM_PLAYERS; playerIndex++) {
     const PLAYER = Isaac.GetPlayer(playerIndex);
 
-    if (PLAYER === null) {
+    if (PLAYER === null || PLAYER === undefined) {
       return;
     }
 
