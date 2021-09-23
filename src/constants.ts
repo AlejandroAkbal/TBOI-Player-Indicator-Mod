@@ -12,9 +12,9 @@ export const PLAYER_COLOR_ARRAY = [
   KColor(0, 255, 0, 1), // Lime -> Green
   KColor(255, 0, 255, 1), // Fuchsia -> Pink
   KColor(255, 255, 0, 1), // Lemon Glacier -> Yellow
-  // KColor(255, 0, 0, 1), // Red
-  // KColor(0, 255, 0, 1), // Green
-  // KColor(0, 0, 255, 1), // Blue
-  // KColor(255, 255, 255, 1), // White
-  // KColor(0, 0, 0, 1), // Black
+  KColor(255, 0, 0, 1), // Red
+  KColor(0, 255, 0, 1), // Green
+  KColor(0, 0, 255, 1), // Blue
+  KColor(255, 255, 255, 1), // White
+  KColor(0, 0, 0, 1), // Black
 ];
