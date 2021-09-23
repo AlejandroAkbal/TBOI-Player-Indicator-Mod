@@ -15,6 +15,6 @@
     "publish": "isaacscript publish"
   },
   "dependencies": {
-    "isaacscript": "^1.0.122"
+    "isaacscript": "^1.1.21"
   }
 }
